@@ -31,5 +31,6 @@ sed -i 's/#elasticsearch.url:/elasticsearch.url:/g' /etc/kibana/kibana.yml
 systemctl daemon-reload
 systemctl start kibana.service
 systemctl enable kibana.service
-echo "Installing nginx and the 'apache2-utils' packages to the system"
-apt install nginx apache2-utils -y
+wget -O /etc/metricbeat/metricbeat.yml 
+#echo "Installing nginx and the 'apache2-utils' packages to the system"
+#apt install nginx apache2-utils -y
