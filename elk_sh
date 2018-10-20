@@ -33,7 +33,9 @@ systemctl start kibana.service
 systemctl enable kibana.service
 wget -O /etc/metricbeat/metricbeat.yml https://raw.githubusercontent.com/aftab70/java/master/metricbeat_config
 metricbeat modules enable system
-wget -O /etc/metricbeat/modules.d/system.yml 
+wget -O /etc/metricbeat/modules.d/system.yml https://raw.githubusercontent.com/aftab70/java/master/metricbeat_system
 metricbeat -e
+systemctl start metricbeat.service
+systemctl enable metricbeat.service
 #echo "Installing nginx and the 'apache2-utils' packages to the system"
 #apt install nginx apache2-utils -y
