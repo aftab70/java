@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "System is going update and upgrade, Please wait a while"
+echo "Installing Nginx and the 'apache2-utils' packages to the system"
+sudo apt install nginx apache2-utils -y
+touch /etc/nginx/sites-available/kibana
+wget -O /etc/nginx/sites-available/kibana https://raw.githubusercontent.com/aftab70/mycodes/master/kibana_reverse_proxy_with_ssl
+
