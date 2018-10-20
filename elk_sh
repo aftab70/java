@@ -44,9 +44,12 @@ filebeat modules enable system
 filebeat setup
 systemctl start filebeat.service
 systemctl enable filebeat.service
+echo "your installation is completed"
+echo "elasticsearch url http://localhost:9200 "
+echo "Kibana url http://localhost:5601"
+echo "Metricbeat and filebeat configured with localhost"
 
 
 
 
-#echo "Installing nginx and the 'apache2-utils' packages to the system"
-#apt install nginx apache2-utils -y
+
