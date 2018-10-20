@@ -15,6 +15,7 @@ echo "ssl_certificate_key /etc/ssl/private/nginx-selfsigned.key;" >> /etc/nginx/
 touch /etc/nginx/snippets/ssl-params.conf
 wget -O /etc/nginx/snippets/ssl-params.conf https://raw.githubusercontent.com/aftab70/java/master/ssl_param_nginx
 nginx -t
+systemctl restart nginx
 
 echo "-------------------------------------------"
 echo "-  Elasticsearch and KibanaSetup Complete -"
