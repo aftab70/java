@@ -1,12 +1,19 @@
 #!/bin/bash
 
+echo "-------------------------------------------------------"
 echo "System is going update and upgrade, Please wait a while"
+echo "-------------------------------------------------------"
 echo "Installing Nginx and the 'apache2-utils' packages to the system"
 sudo apt install nginx apache2-utils -y
 touch /etc/nginx/sites-available/kibana
 wget -O /etc/nginx/sites-available/kibana https://raw.githubusercontent.com/aftab70/mycodes/master/kibana_reverse_proxy_with_ssl
 htpasswd -c /etc/nginx/.kibana-user kibana_@dmin $p
 ln -s /etc/nginx/sites-available/kibana /etc/nginx/sites-enabled/
+
+echo "-----------------------------------------------------------"
+echo " Self Signed SSL configuration started, Please wait a while"
+echo "-----------------------------------------------------------"
+
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt
 openssl dhparam -out /etc/nginx/dhparam.pem 4096
 touch /etc/nginx/snippets/self-signed.conf
@@ -16,6 +23,7 @@ touch /etc/nginx/snippets/ssl-params.conf
 wget -O /etc/nginx/snippets/ssl-params.conf https://raw.githubusercontent.com/aftab70/java/master/ssl_param_nginx
 nginx -t
 systemctl restart nginx
+ufw allow 443
 
 echo "-------------------------------------------"
 echo "-  Elasticsearch and KibanaSetup Complete -"
