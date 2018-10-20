@@ -38,6 +38,13 @@ metricbeat -e
 systemctl start metricbeat.service
 systemctl enable metricbeat.service
 wget -O /etc/filebeat/filebeat.yml https://raw.githubusercontent.com/aftab70/java/master/filebeat_config
+filebeat modules enable system
+filebeat setup
+systemctl start filebeat.service
+systemctl enable filebeat.service
+
+
+
 
 #echo "Installing nginx and the 'apache2-utils' packages to the system"
 #apt install nginx apache2-utils -y
