@@ -10,6 +10,11 @@ wget -O /etc/nginx/sites-available/kibana https://raw.githubusercontent.com/afta
 htpasswd -c /etc/nginx/.kibana-user kibana_@dmin $p
 ln -s /etc/nginx/sites-available/kibana /etc/nginx/sites-enabled/
 
+touch /etc/nginx/sites-available/elastic
+wget -O /etc/nginx/sites-available/elastic
+
+
+
 echo "-----------------------------------------------------------"
 echo " Self Signed SSL configuration started, Please wait a while"
 echo "-----------------------------------------------------------"
