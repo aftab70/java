@@ -25,11 +25,12 @@ nginx -t
 systemctl restart nginx
 ufw allow 443
 
-echo "-------------------------------------------"
-echo "-  Elasticsearch and KibanaSetup Complete -"
-echo "-                                         -"
-echo "-  You can access kibana on port 443      -"
-echo "-  Username: kibana_@dmin                 -"
-echo "-  Password: ***********                  -"
-echo "-                                         -"
-echo "-------------------------------------------"
+echo "--------------------------------------------"
+echo "-                                          -"
+echo "-  elasticsearch and Kibana Setup Complete -"
+echo "-                                          -"
+echo "-   You can access kibana on port 443      -"
+echo "-   Username: kibana_@dmin                 -"
+echo "-   Password: ***********                  -"
+echo "-                                          -"
+echo "----- --------------------------------------"
