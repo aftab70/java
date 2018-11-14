@@ -11,7 +11,11 @@ htpasswd -c /etc/nginx/.kibana-user admin_kib@na $p
 ln -s /etc/nginx/sites-available/kibana /etc/nginx/sites-enabled/
 
 touch /etc/nginx/sites-available/elastic
-wget -O /etc/nginx/sites-available/elastic
+wget -O /etc/nginx/sites-available/elastic https://raw.githubusercontent.com/aftab70/java/master/nginx_elastic_reverse_proxy
+htpasswd -c /etc/nginx/.elastic; admin_el@stic $p
+ln -s /etc/nginx/sites-available/elastic /etc/nginx/sites-enabled/
+systemctl enable nginx
+systemctl restart nginx
 
 
 
@@ -35,7 +39,7 @@ echo "-                                                         -"
 echo "-       Elasticsearch and Kibana Setup Complete           -"
 echo "-                                                         -"
 echo "-     You can access kibana on https://IP_or_localhost    -"
-echo "-                 Username: kibana_@dmin                  -"
+echo "-                 Username: ************                  -"
 echo "-                 Password: ***********                   -"
 echo "-                                                         -"
 echo "----- -----------------------------------------------------"
