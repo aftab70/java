@@ -7,7 +7,7 @@ echo "Installing Nginx and the 'apache2-utils' packages to the system"
 sudo apt install nginx apache2-utils -y
 touch /etc/nginx/sites-available/kibana
 wget -O /etc/nginx/sites-available/kibana https://raw.githubusercontent.com/aftab70/mycodes/master/kibana_reverse_proxy_with_ssl
-htpasswd -c /etc/nginx/.kibana-user kibana_@dmin $p
+htpasswd -c /etc/nginx/.kibana-user admin_kib@na $p
 ln -s /etc/nginx/sites-available/kibana /etc/nginx/sites-enabled/
 
 touch /etc/nginx/sites-available/elastic
