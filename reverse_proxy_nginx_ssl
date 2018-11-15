@@ -1,5 +1,8 @@
 #!/bin/bash
 
+metricbeat setup
+filebeat setup
+
 echo "-------------------------------------------------------"
 echo "System is going update and upgrade, Please wait a while"
 echo "-------------------------------------------------------"
