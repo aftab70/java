@@ -34,14 +34,12 @@ systemctl enable kibana.service
 wget -O /etc/metricbeat/metricbeat.yml https://raw.githubusercontent.com/aftab70/java/master/metricbeat_config
 metricbeat modules enable system
 wget -O /etc/metricbeat/modules.d/system.yml https://raw.githubusercontent.com/aftab70/java/master/metricbeat_system
-metricbeat setup
 systemctl start metricbeat.service
 systemctl enable metricbeat.service
 wget -O /etc/filebeat/filebeat.yml https://raw.githubusercontent.com/aftab70/java/master/filebeat_config
 cd /usr/share/elasticsearch/
 bin/elasticsearch-plugin install ingest-geoip
 filebeat modules enable system
-filebeat setup
 systemctl start filebeat.service
 systemctl enable filebeat.service
 echo "your installation is completed"
