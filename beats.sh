@@ -9,6 +9,7 @@ dpkg -i /opt/elk/metricbeat-6.4.2-amd64.deb
 dpkg -i /opt/elk/filebeat-6.4.2-amd64.deb
 cp /home/tortoise/beats_installation/metricbeat.yml /etc/metricbeat/metricbeat.yml
 cp /home/tortoise/beats_installation/system.yml /etc/metricbeat/modules.d/system.yml
+systemctl daemon-reload
 metricbeat modules enable system
 systemctl start metricbeat.service
 cp /home/tortoise/beats_installation/filebeat.yml /etc/filebeat/filebeat.yml
