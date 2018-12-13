@@ -1,0 +1,12 @@
+server {
+    listen 8201;
+ 
+    server_name default_server;
+ 
+    auth_basic "Restricted Access";
+    auth_basic_user_file /etc/nginx/.elastic;
+ 
+    location / {
+        proxy_pass http://localhost:9200;
+    }
+}
