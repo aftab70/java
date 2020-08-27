@@ -1,3 +1,7 @@
+# for elasticsearch 
+
+vim elasticsearch.sh
+
 #!/bin/bash
 
 set -x
@@ -16,3 +20,8 @@ sed -i '17s@#cluster.name: my-application@cluster.name: ot-microservices@' /etc/
 sed -i '55s@#network.host: 192.168.0.1@http.host: 0.0.0.0@' /etc/elasticsearch/elasticsearch.yml
 sudo systemctl restart elasticsearch.service
 curl http://localhost:9200
+
+
+# script execution
+
+sh elasticsearch.sh
