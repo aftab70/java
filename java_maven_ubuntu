@@ -1,8 +1,16 @@
-#!/bin/bash
+# for maven 
 
+vim maven.sh
+
+
+#!/bin/bash
 
 sudo apt-get update
 sudo apt-get install default-jdk -y
 java -version
 sudo apt-get install maven -y
 mvn -version
+
+# script execution 
+
+sh maven.sh
